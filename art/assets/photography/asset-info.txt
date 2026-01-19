@@ -1,0 +1,17 @@
+Within this directory is all of the webp images that are part of cybercat photography collection. Images will be removed and replaced as needed
+to keep photography page up to date with the latest work. At this time the main landing page for photography holds up to 7 images. When replacing images
+make sure they are 16 by 9 and are in 1080p (except for "Heading" image which should be 875px by 235px. This ensures that no html editing is required to add images.
+
+Images added for the landing page should follow the structured name so that they automatically populate when added. The following naming scheme is listed below:
+
+Heading Image = heading.webp
+Showcase 1st = ccbpic1.webp
+Showcase 2nd = ccbpic2.webp
+Showcase 3rd = ccbpic3.webp
+Showcase 4th = ccbpic4.webp
+Showcase 5th = ccbpic5.webp
+Showcase 6th = ccbpic6.webp
+
+In the event an additional image is needed. It should be named as follows: 
+
+Additional image = ccbpicadd.webp
