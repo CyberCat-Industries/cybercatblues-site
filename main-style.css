@@ -1,0 +1,512 @@
+/* ==========================================================================
+   1. GLOBAL RESETS & VARIABLES
+   ========================================================================== */
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-size: 16px;
+	line-height: 24px;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh; 
+}
+
+:root {
+	--gjs-t-color-primary: #36BFFA;
+	--gjs-t-color-secondary: #ffffff;
+	--gjs-t-color-accent: #03060A;
+	--gjs-t-color-success: #28a745;
+	--gjs-t-color-warning: #ffc107;
+	--gjs-t-color-error: #dc3545;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* ==========================================================================
+   2. TYPOGRAPHY & BASE CLASSES
+   ========================================================================== */
+.gjs-t-body {
+	background-color: #03060A;
+	color: #ffffffb3;
+	font-size: 1rem;
+	line-height: 1.75rem;
+	font-family: Figtree;
+}
+
+.gjs-t-h1 {
+	color: var(--gjs-t-color-secondary);
+	font-size: 3rem;
+	line-height: 3.5rem;
+	font-family: 'Space Grotesk';
+	align-self: center;
+}
+
+.gjs-t-h2 {
+	color: #36BFFA;
+	font-size: 1.2rem;
+	line-height: 1.75rem;
+	font-family: 'Space Grotesk';
+}
+
+.gjs-t-button {
+	background-color: var(--gjs-t-color-primary);
+	color: #03060A;
+	border-radius: 0.3rem;
+}
+
+.gjs-t-link {
+	color: var(--gjs-t-color-secondary);
+	text-decoration: none;
+}
+
+.gjs-t-link1 {
+    color: var(--gjs-t-color-primary);
+    text-decoration: none;
+    text-align: center;
+}
+
+/* ==========================================================================
+   3. LAYOUT & CONTAINERS
+   ========================================================================== */
+.gjs-plg-flex-row {
+	display: flex;
+	align-items: center;
+    justify-content: center;
+}
+
+.gjs-plg-flex-column {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+}
+
+.gjs-container {
+	width: 90%;
+	margin: 0 auto;
+	max-width: 1200px;
+}
+
+.gjs-section {
+	display: flex;
+	padding: 0;
+}
+
+.gjs-section-first {
+	display: flex;
+	margin-top: 5%;
+	padding: 50px 0;
+}
+
+.gjs-link-box {
+	color: inherit;
+	display: inline-block;
+	vertical-align: top;
+	padding: 10px;
+	max-width: 100%;
+	text-decoration: none;
+}
+
+.gjs-icon {
+	display: inline-flex;
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+	vertical-align: middle;
+	fill: #ffffff;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+/* ==========================================================================
+   4. NAVIGATION (NAVBAR)
+   ========================================================================== */
+a {
+	text-decoration: none;
+}
+
+#logo {
+	font-family: 'Space Grotesk';
+	font-size: 35px;
+	font-weight: 700;
+	margin-bottom: 0;
+	color: #36BFFA;
+}
+
+.gjs-navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	background-color: #03060A;
+	background: rgba(255, 255, 255, 0);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(12.4px);
+	-webkit-backdrop-filter: blur(12.4px);
+	-webkit-box-shadow: 5px 5px 15px 5px #000000; 
+	box-shadow: 5px 5px 15px 5px #000000;
+}
+
+.navbar {
+	color: #FFFFFF;
+	min-height: 70px;
+	width: 100%;
+	background-color: transparent;
+}
+
+.navbar-cnt {
+	max-width: 1200px;
+	margin: 0 auto;
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 20px 0;
+}
+
+.navbar-brand {
+	vertical-align: top;
+	display: inline-block;
+	padding: 5px;
+	min-height: 40px;
+	color: inherit;
+	text-decoration: none;
+	text-shadow: 3px 3px 5px #1C6EA4;
+}
+
+.navbar-menu-toggle .gjs-icon {
+	margin: 10px 0;
+	padding: 5px 10px;
+	display: flex;
+	cursor: pointer;
+	color: #ffffff;
+	fill: #ffffff;
+	width: 55px;
+	height: 55px;
+}
+
+.navbar-items-c {
+	float: right;
+}
+
+.navbar-menu-nav {
+	padding: 10px 0;
+	display: flex;
+	gap: 40px;
+	align-items: center;
+}
+
+.nav-links {
+	text-decoration: none;
+	color: #FFFFFF;
+	font-weight: 700;
+	font-size: 18px;
+	font-family: 'Space Grotesk', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: -0.36px;
+	transition: color 0.3s ease;
+}
+
+.nav-links:hover {
+	color: #36BFFA;
+}
+
+/* ==========================================================================
+   5. SHARED COMPONENTS (SOCIALS, CARDS)
+   ========================================================================== */
+.sml-item {
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	background-color: rgba(255, 255, 255, 0.06);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
+	text-decoration: none;
+}
+
+.sml-item:hover {
+	background-color: var(--gjs-t-color-primary);
+	transform: translateY(-3px);
+	border-color: transparent;
+}
+
+.sml-item img {
+	display: block;
+	width: 20px;
+	height: 20px;
+}
+
+.sml-item:focus-visible {
+	outline: 2px solid var(--gjs-t-color-primary);
+	outline-offset: 2px;
+}
+
+.social-row {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   6. PAGE-SPECIFIC SECTIONS
+   ========================================================================== */
+
+/* --- 404 (Pineapple) --- */
+#pineapple {
+	padding: 220px 0 160px;
+	position: relative;
+	overflow: hidden;
+	padding-top: 109px;
+	padding-bottom: 103px;
+}
+
+#pineapple-title {
+	margin-bottom: 40px;
+	font-family: 'Space Grotesk';
+	font-size: 72px;
+	line-height: 90px;
+	text-transform: uppercase;
+}
+
+#pineapple-sub {
+	margin-bottom: 32px;
+	font-size: 24px;
+	line-height: 24px;
+	letter-spacing: 0.96px;
+	font-family: 'Space Grotesk';
+	color: #36BFFA;
+}
+
+#pineapple-text {
+	font-size: 18px;
+	margin-bottom: 40px;
+	display: block;
+	line-height: 26px;
+	max-width: 700px;
+}
+
+#pineapple-btn {
+	padding: 24px 40px;
+	border-radius: 8px;
+    color: #000000;
+	font-size: 24px;
+	line-height: 24px;
+	font-weight: 700;
+	font-family: 'Space Grotesk', sans-serif;
+	text-transform: uppercase;
+	transition: all 0.4s;
+	position: relative;
+}
+
+#pineapple-btn:hover {
+	transform: translateY(-5px);
+}
+
+#pineapple-row {
+	align-items: center;
+	justify-content: center;
+}
+
+#pineapple-col {
+	flex-basis: 100%;
+	align-items: center;
+	text-align: center;
+	padding: 0;
+}
+
+#pineapple-btn-row {
+	gap: 20px;
+	justify-content: center;
+}
+
+/* --- Content Sections (About, Art, Music, Blog) --- */
+#about { padding: 100px 0; margin: 0 450px; }
+#about-row { gap: 80px; align-items: center; }
+#about-text { padding: 10px 0 12px 0; text-align: center; font-size: 18px; }
+
+#art { padding: 100px 0; }
+#art-text { font-size: 18px; margin-bottom: 43px; text-align: center; }
+
+#music { padding: 100px 0 0 0; margin-bottom: 48px; }
+#iframe-video { width: 525px; height: 296px; }
+
+#blog { padding: 120px 0 30px 0; }
+.blog-card { flex: 1 1 calc(33.333% - 20px); border-radius: 12px; transition: all 0.4s ease; }
+
+/* ==========================================================================
+   7. FOOTER
+   ========================================================================== */
+#nav {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+#footer {
+	padding: 30px 0 22px 0;
+	margin-top: auto;
+	width: 100%;
+}
+
+#footer-links {
+	gap: 50px;
+	align-items: flex-start;
+	margin-bottom: 60px;
+	padding: 0 180px;
+}
+
+#footer-col-1 {
+	flex-basis: 35%;
+	align-items: flex-start;
+}
+
+#footer-logo {
+	font-family: 'Space Grotesk';
+	font-size: 28px;
+	font-weight: 700;
+	color: #ffffff;
+	margin-bottom: 20px;
+}
+
+#footer-text {
+	font-size: 16px;
+	line-height: 26px;
+	margin-bottom: 30px;
+}
+
+#footer-col-2,
+#footer-col-3 {
+	flex-basis: 20%;
+	align-items: flex-start;
+}
+
+#footer-h {
+	font-size: 20px;
+	font-weight: 700;
+	font-family: 'Space Grotesk';
+	color: #ffffff;
+	text-transform: uppercase;
+	margin-bottom: 24px;
+}
+
+#footer-website {
+	margin: 5px 0;
+}
+
+#footer-copy {
+	justify-content: center;
+	padding: 0;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#footer-copyright {
+	font-size: 14px;
+	color: rgba(255, 255, 255, 0.6);
+	text-align: center;
+}
+
+#footer-email {
+	padding: 10px;
+	font-family: 'Space Grotesk';
+	color: rgba(23, 162, 172, 1);
+	text-decoration: underline;
+    text-align: center;
+}
+/* ==========================================================================
+   8. FONTS & ANIMATIONS
+   ========================================================================== */
+/* Fonts */
+@font-face {
+	font-family: Figtree;
+	src: url('https://fonts.gstatic.com/s/figtree/v9/_Xms-HUzqDCFdgfMq4a3DIZs3ik.woff2');
+	font-weight: 300 900;
+}
+
+@font-face {
+	font-family: Figtree;
+	src: url('https://fonts.gstatic.com/s/figtree/v9/_Xmu-HUzqDCFdgfMm4G9DaRpzimMsg.woff2');
+	font-style: italic;
+	font-weight: 300 900;
+}
+
+@font-face {
+	font-family: 'Space Grotesk';
+	src: url('https://fonts.gstatic.com/s/spacegrotesk/v22/V8mDoQDjQSkFtoMM3T6r8E7mDbNyCts0DqQ.woff2');
+	font-weight: 300 700;
+}
+
+/* ==========================================================================
+   9. RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================================================== */
+
+/* --- Tablet / Large Mobile (992px) --- */
+@media (max-width:992px) {
+	h1 {
+		font-size: 70px;
+		line-height: 70px;
+	}
+	h3 {
+		font-size: 20px;
+	}
+	.gjs-section { padding: 60px 0; }
+	.sml-item { width: 52px; height: 52px; }
+	#pineapple { padding: 150px 0 29px 0; }
+	#pineapple-row { flex-direction: column; }
+	#footer-links { flex-direction: column; }
+	#footer-col-1, #footer-col-2, #footer-col-3 { flex-basis: 100%; margin-bottom: 30px; }
+    #about-row, #art-detail, #music-row { flex-direction: column; }
+}
+
+/* --- Mobile (768px) --- */
+@media (max-width:768px) {
+	h1 {font-size: 40px; line-height: 40px;}
+	.navbar-menu-toggle { display: block; }
+	.navbar-items-c { display: none; width: 100%; }
+	.navbar-menu-nav { flex-direction: column; gap: 20px; padding: 20px 0; }
+	#pineapple { padding: 100px 0 80px 0; }
+	#pineapple-sub { font-size: 14px; }
+	#pineapple-text { font-size: 16px; }
+}
+
+/* --- Small Mobile (480px) --- */
+@media (max-width:480px) {
+	.sml-item { width: 48px; height: 48px; }
+	#pineapple { padding: 106px 0 83px 0; }
+	#pineapple-title { font-size: 36px; line-height: 44px; }
+	#pineapple-text { font-size: 15px; }
+	#pineapple-btn { padding: 16px 28px; font-size: 16px; margin-top: 50px; }
+	#footer-links { padding: 0; }
+    #about { padding: 15px 0 10px 0; margin: 0; }
+    #iframe-video { width: 282px; height: 217px; }
+	#footer-col-1,
+	#footer-col-2,
+	#footer-col-3 {margin: 0;}
+	#footer-copy {
+		padding: 2px 0 0 0;
+	}
+	#footer {
+		padding: 2px 0 0 0;
+	}
+}
+
+/* --- Desktop Only Interaction --- */
+@media (min-width:480px) {
+	.navbar-menu-toggle .gjs-icon {
+		width: 0px;
+		height: 0px;
+	}
+}
