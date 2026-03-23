@@ -73,7 +73,7 @@ html {
 
 .gjs-plg-flex-row-music-bnt {
 	display: flex;
-	margin: 20%;
+	margin: 5%;
 	align-items: center;
     justify-content: center;
 }
@@ -515,8 +515,8 @@ ul li {
 
 #about {
 	padding: 100px 0;
-	margin-left: 450px;
-	margin-right: 450px;
+	margin-left: 5%x;
+	margin-right: 5%;
 }
 
 #about-row {
@@ -570,6 +570,7 @@ ul li {
 	text-transform: uppercase;
 	transition: all 0.4s;
 	display: inline-block;
+	align-self: center;
 }
 
 #about-btn:hover {
@@ -670,10 +671,11 @@ ul li {
 #music-text {
 	padding: 10px 30px 0 40px;
 	max-width: 500px;
+	text-align: center;
 }
 
 #music-title {
-	margin-bottom: 0;
+	margin-bottom: 2%;
 	font-family: 'Space Grotesk';
 	text-transform: uppercase;
 }
@@ -855,11 +857,11 @@ ul li {
 }
 
 #footer-email {
-	padding: 10px;
+	padding: px;
 	font-family: 'Space Grotesk';
-	color: rgba(23, 162, 172, 1);
+	color: var(--gjs-t-color-primary);
 	text-decoration: underline;
-    text-align: center;
+    text-align: left;
 }
 
 /* Fonts */
