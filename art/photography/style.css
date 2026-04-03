@@ -1010,7 +1010,7 @@ ul li {
 		font-size: 16px;
 	}
 	#pineapple {
-		padding: 100px 0 80px 0;
+		padding: 120px 0 80px 0;
 	}
 	#blog {
 		padding: 60px 0;
@@ -1025,6 +1025,9 @@ ul li {
 	h2 {
 		font-size: 24px;
 		line-height: 32px;
+	}
+	.gjs-container {
+		width: 95%;
 	}
 	#isocial-links .sml-item,
 	.sml-item {
@@ -1063,7 +1066,7 @@ ul li {
 		margin-top: 50px;
 	}
 	#pineapple {
-		padding: 106px 0 83px 0;
+		padding: 120px 0 83px 0;
 	}
 	#pineapple-sub {
 		margin-bottom: 2px;
@@ -1165,6 +1168,13 @@ ul li {
 	}
 	#footer {
 		padding: 2px 0 0 0;
+	}
+	.photo-grid-row {
+		gap: 0;
+		margin-bottom: 20px;
+	}
+	.photo-grid-item {
+		margin-bottom: 15px;
 	}
 }
 /*Desktop Only Stlye*/

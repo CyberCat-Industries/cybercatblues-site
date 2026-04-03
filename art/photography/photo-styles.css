@@ -449,7 +449,7 @@ ul li {
 }
 
 #pineapple {
-	padding: 220px 0 160px;
+	padding: 230px 0 160px;
 	position: relative;
 	overflow: hidden;
 	padding-top: 109px;
@@ -890,7 +890,7 @@ ul li {
 		flex-direction: column;
 	}
 	#pineapple {
-		padding: 150px 0 29px 0;
+		padding: 160px 0 29px 0;
 	}
 	#footer-col-1,
 	#footer-col-2,
