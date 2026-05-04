@@ -41,7 +41,7 @@ html {
 }
 
 .gjs-t-h2 {
-	color: #36BFFA;
+	color: #601843;
 	font-size: 1.2rem;
 	line-height: 1.75rem;
 	font-family: 'Space Grotesk';
@@ -58,23 +58,17 @@ html {
 	text-decoration: none;
 }
 
-.gjs-t-link1 {
+gjs-t-link1 {
     color: var(--gjs-t-color-primary);
     text-decoration: none;
     text-align: center;
 }
 
+
 /* Layout */
 .gjs-plg-flex-row {
 	display: flex;
-	align-items: center;
-    justify-content: center;
-}
-
-.gjs-plg-flex-row-music-bnt {
-	display: flex;
-	margin: 20%;
-	align-items: center;
+	align-items: stretch;
     justify-content: center;
 }
 
@@ -96,11 +90,6 @@ html {
 	padding: 50px 0;
 }
 
-.gjs-section-first {
-	display: flex;
-	margin-top: 5%;
-	padding: 50px 0;
-}
 .gjs-link-box {
 	color: inherit;
 	display: inline-block;
@@ -120,9 +109,9 @@ html {
 .gjs-icon {
 	display: inline-flex;
 	text-decoration: none;
-	color: rgb(255, 255, 255);
+	color: inherit;
 	vertical-align: middle;
-	fill: #ffffff;
+	fill: currentColor;
 	width: 100%;
 	height: 100%;
 	align-items: center;
@@ -151,26 +140,6 @@ ul li {
 	list-style: none;
 }
 
-.gjs-navbar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 1000;
-	background-color: #03060A;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.gjs-navbar {
-	/* From https://css.glass */
-	background: rgba(255, 255, 255, 0);
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-	backdrop-filter: blur(12.4px);
-	-webkit-backdrop-filter: blur(12.4px);
-	-webkit-box-shadow: 5px 5px 15px 5px #000000; 
-	box-shadow: 5px 5px 15px 5px #000000;
-}
-
 .navbar {
 	color: #FFFFFF;
 	min-height: 70px;
@@ -196,18 +165,13 @@ ul li {
 	min-height: 40px;
 	color: inherit;
 	text-decoration: none;
-	text-shadow: 3px 3px 5px #1C6EA4;
 }
 
-.navbar-menu-toggle .gjs-icon {
+.navbar-menu-toggle {
 	margin: 10px 0;
 	padding: 5px 10px;
-	display: flex;
+	display: none;
 	cursor: pointer;
-	color: #ffffff;
-	fill: #ffffff;
-	width: 55px;
-	height: 55px;
 }
 
 .navbar-items-c {
@@ -274,6 +238,44 @@ ul li {
 	color: #FFFFFF;
 	margin-bottom: 0;
 	text-transform: uppercase;
+}
+
+.blog-card {
+	flex: 1;
+	max-width: 420px;
+	border-radius: 12px;
+	overflow: hidden;
+	background: rgba(255, 255, 255, 0.02);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	transition: all 0.4s ease;
+}
+
+/* Add blog card image height control */
+.blog-card img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+}
+
+.blog-card:hover {
+	transform: translateY(-10px);
+	border-color: #36BFFA;
+	background: rgba(54, 191, 250, 0.05);
+}
+
+.blog-card:hover .blog-img-wrap img {
+	transform: scale(1.08);
+}
+
+.blog-content {
+	padding: 30px;
+}
+
+.blog-meta {
+	display: flex;
+	gap: 20px;
+	margin-bottom: 16px;
+	flex-wrap: wrap;
 }
 
 /* Service Features */
@@ -447,7 +449,7 @@ ul li {
 }
 
 #pineapple {
-	padding: 220px 0 160px;
+	padding: 230px 0 160px;
 	position: relative;
 	overflow: hidden;
 	padding-top: 109px;
@@ -713,52 +715,6 @@ ul li {
 	transform: translateY(-5px);
 }
 
-/* ===== BLOG CARDS ===== */
-.blog-card {
-	flex: 1 1 calc(33.333% - 20px);
-	min-width: 0;
-	border-radius: 12px;
-	overflow: hidden;
-	background: rgba(255, 255, 255, 0.02);
-	border: 1px solid rgba(255, 255, 255, 0.1);
-	transition: all 0.4s ease;
-	display: flex;
-	flex-direction: column;
-}
-
-/* Add blog card image height control */
-.blog-card img {
-	width: 100%;
-	height: 200px;
-	object-fit: cover;
-}
-
-.blog-card:hover {
-	transform: translateY(-10px);
-	border-color: #36BFFA;
-	background: rgba(54, 191, 250, 0.05);
-}
-
-.blog-card:hover .blog-img-wrap img {
-	transform: scale(1.08);
-}
-
-.blog-content {
-	padding: 30px;
-	display: flex;
-	flex-direction: column;
-	flex-grow: 1;
-	justify-content: space-between;
-}
-
-.blog-meta {
-	display: flex;
-	gap: 20px;
-	margin-bottom: 16px;
-	flex-wrap: wrap;
-}
-
-/* ===== BLOG SECTION ===== */
 #blog {
 	padding: 120px 0 30px 0;
 }
@@ -777,11 +733,7 @@ ul li {
 #blog-row {
 	gap: 30px;
 	justify-content: center;
-	/* ADJUST MARGINS TO CONTROL BLOG CARD WIDTH - reduce values to make wider, increase to make narrower */
-	margin: 0 50px;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: stretch;
+	margin: 0 200px;
 }
 
 #footer {
@@ -938,7 +890,7 @@ ul li {
 		flex-direction: column;
 	}
 	#pineapple {
-		padding: 150px 0 29px 0;
+		padding: 160px 0 29px 0;
 	}
 	#footer-col-1,
 	#footer-col-2,
@@ -969,12 +921,8 @@ ul li {
 	#music-row {
 		flex-direction: column;
 	}
-	/* Blog Cards at 992px */
 	#blog-row {
-		flex-direction: row;
-	}
-	.blog-card {
-		flex: 1 1 calc(33.333% - 20px);
+		flex-wrap: wrap;
 	}
 }
 
@@ -1010,7 +958,7 @@ ul li {
 		font-size: 16px;
 	}
 	#pineapple {
-		padding: 120px 0 80px 0;
+		padding: 100px 0 80px 0;
 	}
 	#blog {
 		padding: 60px 0;
@@ -1025,9 +973,6 @@ ul li {
 	h2 {
 		font-size: 24px;
 		line-height: 32px;
-	}
-	.gjs-container {
-		width: 95%;
 	}
 	#isocial-links .sml-item,
 	.sml-item {
@@ -1063,10 +1008,9 @@ ul li {
 	#pineapple-btn {
 		padding: 16px 28px;
 		font-size: 16px;
-		margin-top: 50px;
 	}
 	#pineapple {
-		padding: 120px 0 83px 0;
+		padding: 106px 0 83px 0;
 	}
 	#pineapple-sub {
 		margin-bottom: 2px;
@@ -1113,20 +1057,17 @@ ul li {
 	}
 	#art-text {
 		margin: 3px;
-		margin-bottom: 20px;
 		text-align: center;
 	}
 	#art-img {
 		width: 272px;
-		height: 272px;
+		height: 0;
 	}
 	#art-detail {
 		margin: 0;
 		padding: 0;
 	}
 	#art-btn {
-		margin-left: auto;
-		margin-right: auto;
 		padding: 16px 28px;
 		font-size: 16px;
 	}
@@ -1135,7 +1076,7 @@ ul li {
 	}
 	#music {
 		padding: 31px 0 0 0;
-		margin-bottom: 60px;
+		margin-bottom: 13px;
 	}
 	#music-col {
 		padding: 0 0 0 0;
@@ -1145,10 +1086,6 @@ ul li {
 		font-size: 36px;
 		line-height: 44px;
 	}
-	.gjs-plg-flex-row-music-bnt {
-		margin: 0%;
-	}
-
 	#iframe-video {
 		width: 282px;
 		height: 217px;
@@ -1158,30 +1095,12 @@ ul li {
 		padding: 0 0 34px 0;
 		margin: 0;
 	}
-	/* Blog Cards at 480px Mobile */
 	#blog-row {
 		flex-direction: column;
-		margin: 20px;
-	}
-	.blog-card {
-		flex: 1 1 100%;
+		margin: 0;
 	}
 	#footer {
 		padding: 2px 0 0 0;
-	}
-	.photo-grid-row {
-		gap: 0;
-		margin-bottom: 20px;
-	}
-	.photo-grid-item {
-		margin-bottom: 15px;
-	}
-}
-/*Desktop Only Stlye*/
-@media (min-width:480px) {
-	.navbar-menu-toggle .gjs-icon {
-		width: 0px;
-		height: 0px;
 	}
 }
 
